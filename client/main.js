@@ -4,24 +4,14 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import './../lib/collections.js'
 import './main.html';
-import './createTask.html';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
+// Global Mongo Collection Object in shared folder
+import './../lib/collections.js'
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+// templates 
+import './templates/createTask.html';
+import './templates/createTask.js';
+import './templates/displayTasks.html';
+import './templates/displayTasks.js';
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
