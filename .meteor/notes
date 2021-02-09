@@ -1,0 +1,12 @@
+installed bootstrap 
+required popper.js
+
+atmosphere didn't work!
+
+$ meteor npm install --save @popperjs/core
+$ meteor npm install --save bootstrap@next
+
+imported into main.js
+
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';

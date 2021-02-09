@@ -1,0 +1,2 @@
+Mongo collection defined as global in shared lib folder collections .js
+moved template to separate file import in main.js
