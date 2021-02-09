@@ -9,11 +9,19 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fullcalendar/bootstrap": "^5.5.0",
+    "@fullcalendar/core": "^5.5.1",
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@fullcalendar/interaction": "^5.5.0",
+    "@fullcalendar/list": "^5.5.0",
+    "@fullcalendar/timegrid": "^5.5.1",
     "@popperjs/core": "^2.6.0",
     "add": "^2.0.6",
     "bootstrap": "^5.0.0-beta1",
     "jquery": "^3.5.1",
     "meteor-node-stubs": "^1.0.1",
+    "moment": "^2.29.1",
     "simpl-schema": "^1.10.2"
   },
   "meteor": {
