@@ -8,3 +8,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 Mongo collection defined as global in shared lib folder collections .js
 moved template to separate file import in main.js
+
+added simple schema via npm, collection2 via meteor for data validation
+opted to fo form manually although autoform was tempting
+
+installed fullCalendar eventually... meteor package didn't work
+installed bootsrap version which required fontawesome (which required tweeking to work with meteor) but appears buggy...
+using standard view for now
+
+npm install --save @fullcalendar/core @fullcalendar/bootstrap
+npm install --save bootstrap @fortawesome/fontawesome-free

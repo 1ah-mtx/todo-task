@@ -9,16 +9,15 @@ import bootstrapPlugin from '@fullcalendar/bootstrap';
 import '@fullcalendar/common/main.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import '@fortawesome/fontawesome-free/js/all.js';
+// import '@fortawesome/fontawesome-free/js/all.js';
 
 Template.calendar.onRendered(() => {
-    // $('#calendarDiv').fullCalendar();
 
-    var calendarEl = document.getElementById('calendarDiv');
+    var host = document.getElementById('calendarDiv');
 
-    var calendar = new Calendar(calendarEl, {
-        plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, bootstrapPlugin ],
-        themeSystem: 'standard',
+    var calendar = new Calendar(host, {
+        plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin/*, bootstrapPlugin*/ ],
+        themeSystem: 'standard',    // 'botstrap' theme buggy...
         headerToolbar: {
         left: 'prev,next today',
         center: 'title',
@@ -38,51 +37,6 @@ Template.calendar.onRendered(() => {
             start: '2018-01-07',
             end: '2018-01-10'
         },
-        {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2018-01-09T16:00:00'
-        },
-        {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2018-01-16T16:00:00'
-        },
-        {
-            title: 'Conference',
-            start: '2018-01-11',
-            end: '2018-01-13'
-        },
-        {
-            title: 'Meeting',
-            start: '2018-01-12T10:30:00',
-            end: '2018-01-12T12:30:00'
-        },
-        {
-            title: 'Lunch',
-            start: '2018-01-12T12:00:00'
-        },
-        {
-            title: 'Meeting',
-            start: '2018-01-12T14:30:00'
-        },
-        {
-            title: 'Happy Hour',
-            start: '2018-01-12T17:30:00'
-        },
-        {
-            title: 'Dinner',
-            start: '2018-01-12T20:00:00'
-        },
-        {
-            title: 'Birthday Party',
-            start: '2018-01-13T07:00:00'
-        },
-        {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2018-01-28'
-        }
         ]
     });
 

@@ -5,22 +5,35 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="row">
+      <div class="col-md-8 offset-md-2">
         <h1>Welcome to Task master!</h1>
-        {{> createTask}}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        {{> displayTasks}}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        {{> calendar}}
-      </div>
-    </div>
+        <nav>
+          <ul>
+            <li>Task view</li>
+            <li>Calendar view</li>
+          </ul>
+        </nav>
+        </div>
+    </header>
+    <main id="content">
+      <section class="row create-task">
+        <div class="col-md-8 offset-md-2">
+          {{> createTask}}
+        </div>
+      </section>
+      <section class="row display-tasks">
+        <div class="col-md-8 offset-md-2">
+          {{> displayTasks}}
+        </div>
+      </section>
+      <section class="row calendar">
+        <div class="col-md-8 offset-md-2">
+          {{> calendar}}
+        </div>
+      </section>
+    </main>
   </div>
 </body>
 
