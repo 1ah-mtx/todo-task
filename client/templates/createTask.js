@@ -35,3 +35,9 @@ Template.createTask.events({'submit form' (event, instance) {
     event.target.description.value = ""
   },
 });
+
+Template.createTask.onRendered( () => {
+  let label = document.forms[0].label
+  let submit = document.forms[0].addTask
+  label.addEventListener("input", (event) => { submit.disabled = label.value.length === 0 })
+});
