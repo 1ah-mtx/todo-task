@@ -1,38 +1,60 @@
 <head>
   <title>todo-task</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  
 </head>
 
 <body>
-  <div class="container-fluid">
+  <header class="jumbotron text-center">
     <a class="skip-link" href="#content">Skip to content</a>
-    <header class="row">
-      <div class="col-md-8 offset-md-2">
-        <h1>Welcome to Task master!</h1>
-        <nav>
-          <ul>
-            <li>Task view</li>
-            <li>Calendar view</li>
-          </ul>
-        </nav>
-        </div>
-    </header>
+    <h1>Welcome to Task master!</h1>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Metix Task</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Tasks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Calendar</a>
+          </li>
+        </ul>
+        <span class="d-flex">
+          <a class="nav-link" href="#">{{> loginButtons}}</a>
+        </span>
+    </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
     <main id="content">
-      <section class="row create-task">
-        <div class="col-md-8 offset-md-2">
-          {{> createTask}}
-        </div>
-      </section>
-      <section class="row display-tasks">
-        <div class="col-md-8 offset-md-2">
-          {{> displayTasks}}
-        </div>
-      </section>
-      <section class="row calendar">
-        <div class="col-md-8 offset-md-2">
-          {{> calendar}}
-        </div>
-      </section>
+      {{#if currentUser}}
+        <section class="row create-task">
+          <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            {{> createTask}}
+          </div>
+        </section>
+        <section class="row display-tasks">
+          <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            {{> displayTasks}}
+          </div>
+        </section>
+        <section class="row calendar">
+          <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            {{> calendar}}
+          </div>
+        </section>
+        {{else}}
+        <section class="log-in">
+          <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <h2>Log in to Create and view Tasks</h2>
+          </div>
+        </section>
+      {{/if}}
     </main>
   </div>
 </body>

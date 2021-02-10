@@ -12,56 +12,63 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import '@fortawesome/fontawesome-free/js/all.js';
 
 calendar = null
+var calendarInitialEvents = []
 
 Template.calendar.helpers({
     tasks: () => { return TaskList.find() },
-    // clearEvents: () => { 
-    //     console.log('clear called')
-    //     if (calendar) {
-    //         let events = calendar.getEvents() 
-    //         console.log('clearing ', events.length,  ' events')
-    //         events.forEach( event => { event.remove() } )
-    //     }
-    // },
     addEvent: (task) => { 
-        console.log(task)
-        let endsOn = new Date(task.startOn)
+        console.log("add event", task)
+
+        let endsOn = new Date(task.startDate)
         endsOn.setTime(endsOn.getTime() + ( task.duration * 60 * 60 * 1000 ) )
 
         let myEvent = {
             id: task._id,
             title: task.label,
-            start: task.startOn,
+            start: task.startDate,
             end: endsOn,
         }
-        let result = calendar.addEvent(myEvent);
-        console.log("myEvent! : ", myEvent, result);
-        calendar.render();
+ 
+        // if calendar object has been initialised, add event
+        if (calendar) {
+            let result = calendar.addEvent(myEvent);
+            console.log("event added", myEvent, result);
+            calendar.render();
+        }
+        else {
+            // store in buffer for eventual init
+            console.log("event buffered");
+            calendarInitialEvents.push(myEvent)
+        }
     },
 });
 
 Template.calendar.onRendered(() => {
-    _initCalendar()
+    
+    if ( !calendar ) 
+        _initCalendar()
+    
+    calendar.render();
 });
 
 function _initCalendar() {
 
+    console.log("in _initCalendar()")
+    
     var host = document.getElementById('calendarDiv');
 
     calendar = new Calendar(host, {
         plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin/*, bootstrapPlugin*/ ],
-        themeSystem: 'standard',    // 'botstrap' theme buggy...
+        themeSystem: 'standard',    // 'bootstrap' theme buggy...
         headerToolbar: {
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
         initialDate: new Date(),
-        navLinks: true, // can click day/week names to navigate views
+        navLinks: true, 
         editable: true,
-        dayMaxEvents: true, // allow "more" link when too many events
-        events: []
+        dayMaxEvents: true,
+        events: calendarInitialEvents // populate with any previously rendered events
     });
-
-    calendar.render();
 }

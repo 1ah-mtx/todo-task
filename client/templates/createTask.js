@@ -19,10 +19,14 @@ Template.createTask.events({'submit form' (event, instance) {
     dateTime.setHours(time[0])
     dateTime.setMinutes(time[1])
     
+    let user = Meteor.user()
+    console.log(user)
+
     let newTask = {
+      userId: user._id,
       label: form.label.value,
       description: form.description.value,
-      startOn: dateTime,
+      startDate: dateTime,
       duration: form.duration.value,
       done: false,
     };

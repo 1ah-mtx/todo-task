@@ -1,10 +1,10 @@
 <template name="createTask">
     <form name="task-form">
         <input name="label" type="text" maxlength="48" placeholder="name it here"><br>
-        <input name="description" type="text" rows="2" placeholder="describe it here..."><br>
+        <input name="description" type="text" maxlength="128" rows="2" placeholder="describe it here..."><br>
         <input name="startDate" type="date" value="{{getToday}}"><br>
         <input name="startTime" type="time" value="{{getTime}}"><br>
-        <input name="duration" type="number" min="1" max="256" value="1"><br>
+        <input name="duration" type="number" min="1" max="128" value="1"><br>
         <input name="addTask" disabled type="submit">
     </form>
 </template>

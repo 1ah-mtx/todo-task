@@ -8,13 +8,20 @@
 </template>
 
 <template name="task">
-    <article class="task-card{{#if done}} task-done{{/if}}">
-        <div>{{label}}</div>
-        <div>{{description}}</div>
-        <div>{{formatDate startOn}}</div>
-        <div>{{formatTime startOn}}</div>
-        <div class="duration">{{duration}}</div>
-        <div><input type="checkbox" checked="{{#if done}}checked{{/if}}"/> done</div>
-        <div><button class="delete-task">delete me</button></div>
-    </article>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <article class="task-card{{#if done}} task-done{{/if}} ">
+            <h3>{{label}}</h3>
+            <div class="fill">
+                <span>{{formatDate startDate}}</span>
+                <span>{{formatTime startDate}}</span>
+                <span class="duration">{{duration}}</span>
+                <p>{{description}}</p>
+            </div>
+            <div>
+                <input type="checkbox" checked="{{#if done}}checked{{/if}}"/>
+                <span> done</span>
+                <button class="delete-task btn btn-outline-dark">remove</button>
+            </div>
+        </article>
+    </div>
 </template>
