@@ -1,3 +1,19 @@
 <template name="displayTasks">
-    
+    <h2>Tasks</h2>
+    <div class="taskList">
+    {{#each tasks}}
+        {{> task}}
+    {{/each }}
+    </div>
+</template>
+
+<template name="task">
+    <article class="task-card{{#if done}} task-done{{/if}}">
+        <div>{{label}}</div>
+        <div>{{description}}</div>
+        <div>{{formatDate startOn}}</div>
+        <div>{{formatTime startOn}}</div>
+        <div><input type="checkbox" checked="{{#if done}}checked{{/if}}"/> done</div>
+        <div><button class="delete-task">delete me</button></div>
+    </article>
 </template>

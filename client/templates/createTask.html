@@ -1,6 +1,9 @@
 <template name="createTask">
-    <form>
-        <input name="label" type="text" maxlength="48" placeholder="name it here">
+    <form name="task-form">
+        <input name="label" type="text" maxlength="48" placeholder="name it here"><br>
+        <input name="description" type="text" rows="2" placeholder="describe it here..."><br>
+        <input name="startDate" type="date" value="{{getToday}}"><br>
+        <input name="startTime" type="time" value="{{getTime}}"><br>
         <input type="submit">
     </form>
 </template>

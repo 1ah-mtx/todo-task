@@ -1,0 +1,24 @@
+section.display-tasks .taskList {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+section.display-tasks .task-card {
+    display: flex;
+    flex-flow: column;
+    background-color: lightgoldenrodyellow;
+    min-width: 16.667vw;
+    min-height: fit-content;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+section.display-tasks .task-card.task-done {
+    background-color: lightgreen;
+}    
+
+
+section.display-tasks .taskList {
+    margin: 0.1em;
+}
