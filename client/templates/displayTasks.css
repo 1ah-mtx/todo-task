@@ -22,3 +22,7 @@ section.display-tasks .task-card.task-done {
 section.display-tasks .taskList {
     margin: 0.1em;
 }
+
+.task-card .duration::after {
+    content: " hrs";
+}

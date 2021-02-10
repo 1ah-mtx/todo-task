@@ -1,5 +1,8 @@
 <template name="calendar">
     <div>
         <div id="calendarDiv"></div>
+        {{#each task in tasks }}
+            {{ addEvent task }}
+        {{/each }}
     </div>
 </template>

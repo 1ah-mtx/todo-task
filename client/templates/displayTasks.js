@@ -1,3 +1,4 @@
+import { calendarFormat } from "moment";
 
 
 // displayTasks 
@@ -20,5 +21,8 @@ Template.task.events({
     },
     "click .delete-task": (event, template) => {
         TaskList.remove({_id: template.data._id});
+        let calendarEvent = calendar.getEventById(template.data._id);
+        console.log("deleteing ", calendarEvent);
+        calendarEvent.remove();
     },
 });
