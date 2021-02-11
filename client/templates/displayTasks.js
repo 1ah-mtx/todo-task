@@ -3,7 +3,7 @@ import { calendarFormat } from "moment";
 
 // displayTasks 
 Template.displayTasks.helpers({
-    tasks: () => { return TaskList.find() },
+    tasks: () => { return TaskList.find({ userId: Meteor.userId() }) },
 });
 
 

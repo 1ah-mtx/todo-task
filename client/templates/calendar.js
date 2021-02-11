@@ -15,7 +15,7 @@ calendar = null
 var calendarInitialEvents = []
 
 Template.calendar.helpers({
-    tasks: () => { return TaskList.find() },
+    tasks: () => { return TaskList.find({ userId: Meteor.userId() }) },
     addEvent: (task) => { 
         console.log("add event", task)
 
@@ -49,6 +49,11 @@ Template.calendar.onRendered(() => {
         _initCalendar()
     
     calendar.render();
+});
+
+Template.calendar.onDestroyed(() => {
+    // clean up
+    calendar = null;
 });
 
 function _initCalendar() {
