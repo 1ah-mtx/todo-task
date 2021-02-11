@@ -18,10 +18,21 @@ import './templates/displayTasks.js';
 import './templates/calendar.html';
 import './templates/calendar.js';
 
+
 // Basic routing
 Router.route('/', function() { this.render('pageTask'); });
 Router.route('/calendar', function() { this.render('pageCalendar'); });
 
 Router.configure({
     layoutTemplate: 'ApplicationLayout'
-  });
+});
+
+
+//  Subscribe to mongo collection in our body template 
+Template.applicationLayout.onCreated(function applicationLayoutOnCreated() {
+
+    this.state = new ReactiveDict();
+
+    Meteor.subscribe('taskList');
+});
+
