@@ -1,0 +1,19 @@
+<!-- template providing content for main section of Calander view page -->
+
+<template name="pageCalendar">
+    {{#if currentUser}}
+    <section class="row calendar">
+      <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <h2>Calander view</h2>
+        {{> calendar}}
+      </div>
+    </section>
+    {{else}}
+    <section class="log-in">
+      <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <h2>Log in to Create and view Tasks</h2>
+      </div>
+    </section>
+    {{/if}}
+  </template>
+  

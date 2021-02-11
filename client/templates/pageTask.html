@@ -1,0 +1,25 @@
+<!-- template providing content for main section of Task view page -->
+
+<template name="pageTask">
+    {{#if currentUser}}
+      <section class="row create-task">
+        <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+          <h2>New tasks</h2>
+          {{> createTask}}
+        </div>
+      </section>
+      <section class="row display-tasks">
+        <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+          <h2>Your tasks</h2>
+          {{> displayTasks}}
+        </div>
+      </section>
+      {{else}}
+      <section class="log-in">
+        <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+          <h2>Log in to Create and view Tasks</h2>
+        </div>
+      </section>
+      {{/if}}
+  </template>
+  
