@@ -25,3 +25,4 @@ accounts-password
 iron:router
 ejson
 reactive-dict
+meteortesting:mocha

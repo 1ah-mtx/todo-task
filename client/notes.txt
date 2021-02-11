@@ -35,6 +35,9 @@ published in taskList.js
 subscribed in client/main.js Template.applicationLayout.onCreated
 
 
+
+
 testing
 
 meteor add meteortesting:mocha
+meteor npm install --save-dev chai
