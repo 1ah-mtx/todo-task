@@ -41,3 +41,15 @@ testing
 
 meteor add meteortesting:mocha
 meteor npm install --save-dev chai
+
+needed to add Random
+
+error when attaching schema during tests when userId is not optional!
+
+tests added to tests/taskTests.js
+included in tests/main.js
+
+run with 
+
+TEST_WATCH=1 meteor test --driver-package meteortesting:mocha
+
