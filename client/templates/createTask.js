@@ -33,7 +33,7 @@ Template.createTask.events({
     };
     
     // update collection
-    TaskList.insert(newTask)
+    Meteor.call('task.insert', newTask);
 
     // reset the form fields
     event.target.label.value = ""
