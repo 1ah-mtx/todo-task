@@ -6,9 +6,9 @@ body {
 .skip-link {
   position: fixed;
   top: -200px;
-}
-.skip-link:focus {
-  top: 0; 
+   &:focus {
+    top: 0; 
+  }
 }
 
 header {
@@ -22,15 +22,15 @@ nav {
 
 section {
   margin: 2em;
+
+  .sign-in {
+    display: flex;
+    align-items: center;
+    
+    h2 {
+      margin-top: 10vh;
+      text-align: center;
+    }  
+  }
 }
 
-section.sign-in {
-  display: flex;
-  align-items: center;
-  
-}
-
-section.sign-in h2 {
-  margin-top: 10vh;
-  text-align: center;
-}

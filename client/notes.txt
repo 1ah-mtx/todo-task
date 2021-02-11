@@ -44,8 +44,6 @@ meteor npm install --save-dev chai
 
 needed to add Random
 
-error when attaching schema during tests when userId is not optional!
-
 tests added to tests/taskTests.js
 included in tests/main.js
 
