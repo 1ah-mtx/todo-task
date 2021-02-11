@@ -1,5 +1,8 @@
 /*
     unit tests for backend methods
+    [1] task.insert
+    [2] task.markDone
+    [3] task.remove
 */
 
 import { Meteor } from 'meteor/meteor';

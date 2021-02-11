@@ -2,20 +2,20 @@
     displayTasks scripts
 */
 
-//helpers
+// task list helpers
 Template.displayTasks.helpers({
     // gets the task list from the collection
     tasks: () => { return TaskList.find({ userId: Meteor.userId() }) },
 });
 
 
-// tasks
+// task item helpers
 Template.task.helpers({
     formatDate: (date) => { return date.toLocaleDateString() },
     formatTime: (date) => { return ('00' + date.getUTCHours()).slice(-2) + ':' + ('00' + date.getUTCMinutes()).slice(-2)}
 });
 
-// event handlers
+// task item event handlers
 Template.task.events({
     // updates a tasks done property
     "click input": (event, template) => {
