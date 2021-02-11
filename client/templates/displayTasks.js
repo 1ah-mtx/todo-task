@@ -10,7 +10,7 @@ Template.displayTasks.helpers({
 // tasks
 Template.task.helpers({
     formatDate: (date) => { return date.toLocaleDateString() },
-    formatTime: (date) => { return date.getUTCHours() + ':' + date.getUTCMinutes()}
+    formatTime: (date) => { return ('00' + date.getUTCHours()).slice(-2) + ':' + ('00' + date.getUTCMinutes()).slice(-2)}
 });
 
 Template.task.events({

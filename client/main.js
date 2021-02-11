@@ -10,7 +10,9 @@ import './main.html';
 // Global Mongo Collection Object in shared folder
 import './../lib/collections.js'
 
-// templates 
+// templates
+// import './templates/pageTask.html'
+// import './templates/pagecalendar.html'
 import './templates/createTask.html';
 import './templates/createTask.js';
 import './templates/displayTasks.html';
@@ -18,3 +20,6 @@ import './templates/displayTasks.js';
 import './templates/calendar.html';
 import './templates/calendar.js';
 
+Router.route('/', function() { this.render('pageTask'); });
+Router.route('/calendar', function() { this.render('pageCalendar'); });
+  

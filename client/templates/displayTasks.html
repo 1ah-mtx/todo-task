@@ -1,9 +1,8 @@
 <template name="displayTasks">
-    <h2>Tasks</h2>
     <div class="taskList">
-    {{#each tasks}}
+        {{#each tasks}}
         {{> task}}
-    {{/each }}
+        {{/each }}
     </div>
 </template>
 
@@ -18,7 +17,7 @@
                 <p>{{description}}</p>
             </div>
             <div>
-                <input type="checkbox" checked="{{#if done}}checked{{/if}}"/>
+                <input type="checkbox" checked="{{#if done}}checked{{/if}}" />
                 <span> done</span>
                 <button class="delete-task btn btn-outline-dark">remove</button>
             </div>
