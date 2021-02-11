@@ -29,7 +29,7 @@ Router.configure({
 
 
 //  Subscribe to mongo collection in our body template 
-Template.applicationLayout.onCreated(function applicationLayoutOnCreated() {
+Template.applicationLayout.onCreated(() => {
 
     this.state = new ReactiveDict();
 

@@ -18,3 +18,23 @@ using standard view for now
 
 npm install --save @fullcalendar/core @fullcalendar/bootstrap
 npm install --save bootstrap @fortawesome/fontawesome-free
+
+
+
+
+removed insecure
+added tasklist allow block to collections.js
+Added Methods
+imported to server/main.js
+
+
+
+publish and subscribe
+removed auto-publish, added reactive-dict
+published in taskList.js 
+subscribed in client/main.js Template.applicationLayout.onCreated
+
+
+testing
+
+meteor add meteortesting:mocha
