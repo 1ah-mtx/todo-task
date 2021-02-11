@@ -7,7 +7,9 @@ Template.createTask.helpers({
   },
 });
 
-Template.createTask.events({'submit form' (event, instance) { 
+
+Template.createTask.events({
+  'submit form' (event, instance) { 
     // we are taking care of this here, no need for browser submit
     event.preventDefault();
 
@@ -40,7 +42,9 @@ Template.createTask.events({'submit form' (event, instance) {
   },
 });
 
+
 Template.createTask.onRendered( () => {
+  // disable submit button when label input is empty
   let label = document.forms[0].label
   let submit = document.forms[0].addTask
   label.addEventListener("input", (event) => { submit.disabled = label.value.length === 0 })
