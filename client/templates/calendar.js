@@ -11,7 +11,7 @@ import listPlugin from '@fullcalendar/list';
 import '@fullcalendar/common/main.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-var calendar = null
+calendar = null
 var calendarInitialEvents = []
 
 // helpers to populate the calenadar with events

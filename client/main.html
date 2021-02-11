@@ -11,7 +11,7 @@
   </header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Metix Task</a>
+      <a class="navbar-brand" >Metix Task</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,11 +46,7 @@
     </div>
   </section>
   {{else}}
-  <section class="log-in">
-    <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2>Log in to Create and view Tasks</h2>
-    </div>
-  </section>
+  {{> signIn}}
   {{/if}}
 </template>
 
@@ -70,13 +66,14 @@
       </div>
     </section>
     {{else}}
-    <section class="log-in">
-      <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-        <h2>Log in to Create and view Tasks</h2>
-      </div>
-    </section>
+    {{> signIn}}
     {{/if}}
 </template>
 
-
-
+<template name="signIn">
+  <section class="sign-in">
+    <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+      <h2>Sign in to Create and view Tasks</h2>
+    </div>
+  </section>
+</template>

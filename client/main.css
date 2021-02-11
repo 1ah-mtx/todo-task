@@ -24,13 +24,13 @@ section {
   margin: 2em;
 }
 
-section.log-in {
+section.sign-in {
   display: flex;
   align-items: center;
   
 }
 
-section.log-in h2 {
+section.sign-in h2 {
   margin-top: 10vh;
   text-align: center;
 }

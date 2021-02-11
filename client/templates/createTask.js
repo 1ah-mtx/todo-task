@@ -22,7 +22,6 @@ Template.createTask.events({
     dateTime.setMinutes(time[1])
     
     let user = Meteor.user()
-    console.log(user)
 
     let newTask = {
       userId: user._id,
