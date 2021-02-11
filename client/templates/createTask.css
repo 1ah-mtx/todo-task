@@ -1,0 +1,45 @@
+div.add-task {
+    box-shadow: 2px 2px 5px 1px lightgray;
+    background-color: ivory;
+    padding: 1em;
+    max-width: 358px;
+    margin: 0.5em;}
+
+div.add-task form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+div.add-task form > * {
+    margin: 1px 0;
+}
+
+div.add-task form button {
+    width: 33%;
+}
+
+div.add-task form input[name="duration"] {
+    width: 33%;
+}
+
+div.add-task form textarea, 
+div.add-task form input[type="text"], 
+div.add-task form input[type="date"], 
+div.add-task form input[type="time"],
+div.add-task form div  {
+    width: 100%;
+}
+
+div.add-task form span {
+    float: left;
+    line-height: 1.75em;
+}
+
+div.add-task form input[type="number"] {
+    float: right;
+}
+
+div.add-task form textarea {
+    resize: none;
+}

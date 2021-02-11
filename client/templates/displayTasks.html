@@ -9,18 +9,21 @@
 </template>
 
 <template name="task">
-    <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card-container col-lg-4 col-md-6 col-sm-12">
         <article class="task-card{{#if done}} task-done{{/if}} ">
             <h3>{{label}}</h3>
-            <div class="fill">
+            <div>
                 <span>{{formatDate startDate}}</span>
                 <span>{{formatTime startDate}}</span>
                 <span class="duration">{{duration}}</span>
+            </div>
+            <div class="fill">
                 <p>{{description}}</p>
             </div>
             <div>
-                <input type="checkbox" checked="{{#if done}}checked{{/if}}" />
-                <span> done</span>
+                <div class="checkbox">
+                    <label><input type="checkbox" checked="{{#if done}}checked{{/if}}" value=""> Done</label>
+                </div>
                 <button class="delete-task btn btn-outline-dark">remove</button>
             </div>
         </article>

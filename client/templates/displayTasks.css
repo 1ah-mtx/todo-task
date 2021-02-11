@@ -4,6 +4,17 @@ section.display-tasks .taskList {
     flex-wrap: wrap;
 }
 
+section.display-tasks .taskList div.card-container {
+    flex-grow: 1;
+}
+
+@media (min-width: 576px) {
+
+    section.display-tasks .taskList div.card-container {
+        flex-grow: 0;
+    }
+}
+
 section.display-tasks .task-card {
     display: flex;
     flex-flow: column;
@@ -39,5 +50,11 @@ section.display-tasks .taskList {
 
 .task-card p {
     padding: 0.5em;
+    display: inline-block;
+}
+
+.task-card div.checkbox {
+    display: inline-block;
+    margin-top: .5em;
 }
 

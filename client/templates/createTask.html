@@ -1,10 +1,18 @@
 <template name="createTask">
-    <form name="task-form">
-        <input name="label" type="text" maxlength="48" placeholder="name it here"><br>
-        <input name="description" type="text" maxlength="128" rows="2" placeholder="describe it here..."><br>
-        <input name="startDate" type="date" value="{{getToday}}"><br>
-        <input name="startTime" type="time" value="{{getTime}}"><br>
-        <input name="duration" type="number" min="1" max="128" value="1"><br>
-        <input name="addTask" disabled type="submit">
-    </form>
+    <div class="row">
+        <div class="add-task col-sm-12 col-md-6 col-lg-4">
+            <h2>New task</h2>
+            <form name="task-form">
+                <input name="label" type="text" maxlength="48" placeholder="name it here">
+                <textarea name="description" type="text" maxlength="128" rows="3" placeholder="describe it here..."></textarea>
+                <input name="startDate" type="date" value="{{getToday}}">
+                <input name="startTime" type="time" value="{{getTime}}">
+                <div>
+                    <span>Duration (in hours)</span>
+                    <input name="duration" type="number" min="1" max="128" value="1">
+                </div>
+                <button name="addTask" disabled type="submit" value="">Add</button>
+            </form>
+        </div>
+    </div>
 </template>
