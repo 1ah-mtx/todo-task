@@ -30,11 +30,5 @@ Template.task.events({
         // update database
 
         Meteor.call('task.remove', id);
-
-        // update calendar
-        if (calendar) {
-            let calendarEvent = calendar.getEventById(id);
-            calendarEvent.remove();
-        }
     },
 });

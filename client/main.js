@@ -1,5 +1,4 @@
 import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -35,4 +34,3 @@ Template.applicationLayout.onCreated(() => {
 
     Meteor.subscribe('taskList');
 });
-

@@ -42,7 +42,7 @@ Template.createTask.events({
 });
 
 
-Template.createTask.onRendered( () => {
+Template.createTask.onRendered(function () {
   // disable submit button when label input is empty
   let label = document.forms[0].label
   let submit = document.forms[0].addTask

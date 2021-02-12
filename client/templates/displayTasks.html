@@ -1,8 +1,8 @@
 <!-- templates for displaying list of and single task -->
 
 <template name="displayTasks">
+    <h2>Your tasks</h2>
     <div class="taskList">
-        <h2>Your tasks</h2>
         {{#each tasks}}
             {{> task}}
         {{/each }}

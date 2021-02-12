@@ -1,4 +1,5 @@
 import { Calendar } from '@fullcalendar/core';
+import { Tracker } from 'meteor/tracker'
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -11,8 +12,8 @@ import listPlugin from '@fullcalendar/list';
 import '@fullcalendar/common/main.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-calendar = null
-var calendarInitialEvents = []
+var calendar = null;
+var calendarInitialEvents = [];
 
 // helpers to populate the calenadar with events
 Template.calendar.helpers({
@@ -26,8 +27,8 @@ Template.calendar.helpers({
         /* adds event to calendar, buffering if called before calendar is instantiated */
 
         // calculate event end from startdate + duration
-        let endsOn = new Date(task.startDate)
-        endsOn.setTime(endsOn.getTime() + (task.duration * 60 * 60 * 1000))
+        let endsOn = new Date(task.startDate);
+        endsOn.setTime(endsOn.getTime() + (task.duration * 60 * 60 * 1000));
 
         // create a callendar event object from our task
         let myEvent = {
@@ -35,7 +36,7 @@ Template.calendar.helpers({
             title: task.label,
             start: task.startDate,
             end: endsOn,
-        }
+        };
 
         // if calendar object has been initialised, add event
         if (calendar) {
@@ -44,17 +45,17 @@ Template.calendar.helpers({
         } 
         else {
             // store in buffer for eventual init
-            calendarInitialEvents.push(myEvent)
+            calendarInitialEvents.push(myEvent);
         }
     },
 });
 
 
 // instantiate, attach and render the calendar when template rendered
-Template.calendar.onRendered(() => {
+Template.calendar.onRendered(function() {
 
     if (!calendar)
-        _initCalendar()
+        _initCalendar();
 
     calendar.render();
 });
@@ -86,5 +87,19 @@ function _initCalendar() {
         editable: true,
         dayMaxEvents: true,
         events: calendarInitialEvents // populate with any previously rendered events
+    });
+
+    // monitor collection so we can remove any events not synced by blaze
+    Tracker.autorun(function () {
+
+        // get our collection
+        let tasks = TaskList.find({userId: Meteor.userId()});
+        let taskIds = tasks.map(task => task._id);
+
+        // if we have a calendar, remove any events no longer in collection
+        if (calendar) {
+            let deadEvents = calendar.getEvents().filter(event => !taskIds.includes(event.id) );
+            deadEvents.forEach(event => { event.remove() })
+        }
     });
 }
