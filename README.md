@@ -1,7 +1,7 @@
 # Metix Task - Simple Reminders app
 
 ## General info
-This project is simple to-app impemented with the Meteor js library using the blaze template engine.
+This project is a simple to-app impemented with the Meteor js library using the blaze template engine.
 
 #### Structure
 
