@@ -6,6 +6,7 @@ This project is simple to-app impemented with the Meteor js library using the bl
 ### To run
 
 `$ npm install dependencies`
+
 `$ meteor`
 
 ### To test
