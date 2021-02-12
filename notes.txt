@@ -37,6 +37,8 @@ subscribed in client/main.js Template.applicationLayout.onCreated
 
 
 
+removed this from git
+
 testing
 
 meteor add meteortesting:mocha
