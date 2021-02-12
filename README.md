@@ -30,7 +30,7 @@ client/templates/displayTasks.js
 
 client/templates/calendar.js
 
-  * Alternate calander view using FullCalendar impemented in in blaze template with Tracker
+  * Alternate calander view using FullCalendar in a blaze template with Tracker
 
 
 ### To run
