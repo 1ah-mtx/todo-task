@@ -14,7 +14,7 @@ lib/methods.js
  * CRUD functions defined here as Meteor methods.
 
 
-tests.taskTests.js
+tests/taskTests.js
 
  * Basic unit testing for CRUD functions
 
