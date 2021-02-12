@@ -6,3 +6,8 @@ This project is simple to-app impemented with the Meteor js library using the bl
 ### To run
 
 `$ npm install dependencies`
+`$ meteor`
+
+### To test
+
+`TEST_WATCH=1 meteor test --driver-package meteortesting:mocha`
