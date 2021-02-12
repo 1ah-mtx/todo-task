@@ -26,7 +26,7 @@ client/main.js
 client/templates/createTask.js
 client/templates/displayTasks.js
 
-  * Blaze templates impementing standard ui
+  * Blaze templates implementing standard ui
 
 client/templates/calendar.js
 
