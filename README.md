@@ -7,30 +7,30 @@ This project is a simple to-app impemented with the Meteor js library using the 
 
 lib/collections.js
 
-  The data is stored in MongoDB using a SimpleSchema and Collection2 for data integrity, and published here.
+  * The data is stored in MongoDB using a SimpleSchema and Collection2 for data integrity, and published here.
 
 lib/methods.js
 
- CRUD functions defined here as Meteor methods.
+ * CRUD functions defined here as Meteor methods.
 
 
 tests.taskTests.js
 
- Basic unit testing for CRUD functions
+ * Basic unit testing for CRUD functions
 
 
 client/main.js
 
-Subscribes to data and implements basic routing using Ironrouter
+  * Subscribes to data and implements basic routing using Ironrouter
 
 client/templates/createTask.js
 client/templates/displayTasks.js
 
-Blaze templates impementing standard ui
+  * Blaze templates impementing standard ui
 
 client/templates/calendar.js
 
-Alternate calander view using FullCalendar impemented in in blaze template with Tracker
+  * Alternate calander view using FullCalendar impemented in in blaze template with Tracker
 
 
 ### To run
