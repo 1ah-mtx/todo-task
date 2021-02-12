@@ -6,7 +6,6 @@ This project is a simple to-app impemented with the Meteor js library using the 
 #### Structure
 
 lib/collections.js
-
 The data is stored in MongoDB using a SimpleSchema and Collection2 for data integrity, and published here.
 
 lib/methods.js
